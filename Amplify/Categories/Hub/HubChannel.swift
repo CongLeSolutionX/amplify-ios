@@ -15,6 +15,8 @@ public enum HubChannel {
     /// Hub messages relating to Amplify API
     case api
 
+    case auth
+
     /// Hub messages relating to Amplify DataStore
     case dataStore
 
@@ -52,6 +54,8 @@ extension HubChannel: Equatable {
             return true
         case (.api, .api):
             return true
+        case (.auth, .auth):
+            return true
         case (.dataStore, .dataStore):
             return true
         case (.hub, .hub):
@@ -88,6 +92,8 @@ extension HubChannel {
             self = .predictions
         case .storage:
             self = .storage
+        case .auth:
+            self = .auth
         }
     }
 }

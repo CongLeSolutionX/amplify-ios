@@ -30,7 +30,7 @@ extension QueryPredicate {
 
 extension QueryPredicateOperation: GraphQLFilterConvertible {
     var graphQLFilter: GraphQLFilter {
-        return [self.field: [self.operator.graphQLOperator: self.operator.value]]
+        return [field: [self.operator.graphQLOperator: self.operator.value]]
     }
 }
 
@@ -45,7 +45,7 @@ extension QueryPredicateGroup: GraphQLFilterConvertible {
             }
             return graphQLPredicateOperation
         case .not:
-            if let predicate = self.predicates.first {
+            if let predicate = predicates.first {
                 return [logicalOperator: predicate.graphQLFilterVariables]
             } else {
                 preconditionFailure("Missing predicate for \(String(describing: self)) with type: \(type)")

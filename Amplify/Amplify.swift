@@ -32,6 +32,7 @@ public class Amplify {
     public static internal(set) var Logging = LoggingCategory()
     public static internal(set) var Predictions = PredictionsCategory()
     public static internal(set) var Storage = StorageCategory()
+    public static internal(set) var Auth = AuthCategory()
 
     /// Adds `plugin` to the Analytics category
     ///
@@ -53,6 +54,8 @@ public class Amplify {
             try Predictions.add(plugin: plugin)
         case let plugin as StorageCategoryPlugin:
             try Storage.add(plugin: plugin)
+        case let plugin as AuthCategoryPlugin:
+            try Auth.add(plugin: plugin)
         default:
             throw PluginError.pluginConfigurationError(
                 "Plugin category does not exist.",

@@ -17,6 +17,7 @@ public struct AmplifyConfiguration: Codable {
         case logging
         case predictions
         case storage
+        case auth
     }
 
     /// Configurations for the Amplify Analytics category
@@ -40,13 +41,16 @@ public struct AmplifyConfiguration: Codable {
     /// Configurations for the Amplify Storage category
     let storage: StorageCategoryConfiguration?
 
+    let auth: AuthCategoryConfiguration?
+
     public init(analytics: AnalyticsCategoryConfiguration? = nil,
                 api: APICategoryConfiguration? = nil,
                 dataStore: DataStoreCategoryConfiguration? = nil,
                 hub: HubCategoryConfiguration? = nil,
                 logging: LoggingCategoryConfiguration? = nil,
                 predictions: PredictionsCategoryConfiguration? = nil,
-                storage: StorageCategoryConfiguration? = nil) {
+                storage: StorageCategoryConfiguration? = nil,
+                auth: AuthCategoryConfiguration? = nil) {
         self.analytics = analytics
         self.api = api
         self.dataStore = dataStore
@@ -54,6 +58,7 @@ public struct AmplifyConfiguration: Codable {
         self.logging = logging
         self.predictions = predictions
         self.storage = storage
+        self.auth = auth
     }
 }
 
@@ -109,7 +114,8 @@ extension Amplify {
                 try configure(Predictions, using: configuration)
             case .storage:
                 try configure(Storage, using: configuration)
-
+            case .auth:
+                try configure(Auth, using: configuration)
             case .hub, .logging:
                 // Already configured
                 break

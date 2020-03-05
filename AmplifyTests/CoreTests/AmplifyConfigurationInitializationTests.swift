@@ -140,6 +140,8 @@ class AmplifyConfigurationInitializationTests: XCTestCase {
                 XCTAssertNil(amplifyConfig.predictions)
             case .storage:
                 XCTAssertNil(amplifyConfig.storage)
+            case .auth:
+                XCTAssertNil(amplifyConfig.auth)
             }
         }
     }
