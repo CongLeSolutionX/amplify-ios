@@ -165,8 +165,13 @@
 		95DAAB8C237F13D10028544F /* PredictionsTextToSpeechRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DAAB8B237F13D10028544F /* PredictionsTextToSpeechRequest.swift */; };
 		972D1CA72316922ECE530571 /* Pods_Amplify_AWSPluginsCore_AWSPluginsTestConfigs_AWSPluginsCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934ECFB4BB156267C1BC067A /* Pods_Amplify_AWSPluginsCore_AWSPluginsTestConfigs_AWSPluginsCoreTests.framework */; };
 		B4340A24238325B900101BBA /* DefaultNetworkPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4340A23238325B900101BBA /* DefaultNetworkPolicy.swift */; };
+		B43CD8522411463000BF5A60 /* AuthCodeDeliveryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43CD8512411463000BF5A60 /* AuthCodeDeliveryDetails.swift */; };
+		B43CD8542411469D00BF5A60 /* AuthConfirmSignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43CD8532411469D00BF5A60 /* AuthConfirmSignUpRequest.swift */; };
+		B43CD8562411472300BF5A60 /* AuthSignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43CD8552411472300BF5A60 /* AuthSignUpResult.swift */; };
+		B43CD858241147F900BF5A60 /* AmplifyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43CD857241147F900BF5A60 /* AmplifyUser.swift */; };
 		B43DC738241051A200D40275 /* AuthSignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43DC737241051A200D40275 /* AuthSignUpRequest.swift */; };
 		B43DC73A2410526C00D40275 /* AmplifyAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43DC7392410526C00D40275 /* AmplifyAuthError.swift */; };
+		B450740D2411553D0098F02D /* AuthConfirmSignUpOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B450740C2411553D0098F02D /* AuthConfirmSignUpOperation.swift */; };
 		B49A02F92410BEBE00B42A25 /* AuthCategory+CategoryConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49A02F82410BEBD00B42A25 /* AuthCategory+CategoryConfigurable.swift */; };
 		B49A02FB2410BEDF00B42A25 /* AuthCategory+Resettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49A02FA2410BEDF00B42A25 /* AuthCategory+Resettable.swift */; };
 		B4A19DAB24101EEB00DE2E55 /* AuthCategoryClientBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A19DAA24101EEB00DE2E55 /* AuthCategoryClientBehavior.swift */; };
@@ -793,8 +798,13 @@
 		AE1BE989582A3F5BB378AF15 /* Pods-AWSPinpointAnalyticsPlugin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWSPinpointAnalyticsPlugin.release.xcconfig"; path = "Target Support Files/Pods-AWSPinpointAnalyticsPlugin/Pods-AWSPinpointAnalyticsPlugin.release.xcconfig"; sourceTree = "<group>"; };
 		B2CF34EB93BFDE1F02457D5E /* Pods-AWSPlugins-AWSPinpointAnalyticsPlugin-AWSPinpointAnalyticsPluginTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWSPlugins-AWSPinpointAnalyticsPlugin-AWSPinpointAnalyticsPluginTests.release.xcconfig"; path = "Target Support Files/Pods-AWSPlugins-AWSPinpointAnalyticsPlugin-AWSPinpointAnalyticsPluginTests/Pods-AWSPlugins-AWSPinpointAnalyticsPlugin-AWSPinpointAnalyticsPluginTests.release.xcconfig"; sourceTree = "<group>"; };
 		B4340A23238325B900101BBA /* DefaultNetworkPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetworkPolicy.swift; sourceTree = "<group>"; };
+		B43CD8512411463000BF5A60 /* AuthCodeDeliveryDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCodeDeliveryDetails.swift; sourceTree = "<group>"; };
+		B43CD8532411469D00BF5A60 /* AuthConfirmSignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfirmSignUpRequest.swift; sourceTree = "<group>"; };
+		B43CD8552411472300BF5A60 /* AuthSignUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignUpResult.swift; sourceTree = "<group>"; };
+		B43CD857241147F900BF5A60 /* AmplifyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplifyUser.swift; sourceTree = "<group>"; };
 		B43DC737241051A200D40275 /* AuthSignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignUpRequest.swift; sourceTree = "<group>"; };
 		B43DC7392410526C00D40275 /* AmplifyAuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplifyAuthError.swift; sourceTree = "<group>"; };
+		B450740C2411553D0098F02D /* AuthConfirmSignUpOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfirmSignUpOperation.swift; sourceTree = "<group>"; };
 		B49A02F82410BEBD00B42A25 /* AuthCategory+CategoryConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AuthCategory+CategoryConfigurable.swift"; sourceTree = "<group>"; };
 		B49A02FA2410BEDF00B42A25 /* AuthCategory+Resettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthCategory+Resettable.swift"; sourceTree = "<group>"; };
 		B4A19DAA24101EEB00DE2E55 /* AuthCategoryClientBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCategoryClientBehavior.swift; sourceTree = "<group>"; };
@@ -1679,18 +1689,18 @@
 		B4A19DA424101E9D00DE2E55 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				B49A02F72410BEBD00B42A25 /* Internal */,
+				B4ADE8F3241063820007E86C /* AuthCategory.swift */,
 				B4FA336524105DCD00E1C659 /* AuthCategory+ClientBehavior.swift */,
 				B4FA336724105E8100E1C659 /* AuthCategory+HubPayloadEventName.swift */,
 				B4A19DAA24101EEB00DE2E55 /* AuthCategoryClientBehavior.swift */,
 				B4FA336924105EB700E1C659 /* AuthCategoryConfiguration.swift */,
 				B4FA336124105D1800E1C659 /* AuthCategoryPlugin.swift */,
 				B4A19DA924101E9D00DE2E55 /* Error */,
+				B49A02F72410BEBD00B42A25 /* Internal */,
 				B4A19DA724101E9D00DE2E55 /* Models */,
 				B4A19DA524101E9D00DE2E55 /* Operation */,
 				B4A19DA824101E9D00DE2E55 /* Request */,
 				B4A19DA624101E9D00DE2E55 /* Result */,
-				B4ADE8F3241063820007E86C /* AuthCategory.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -1699,6 +1709,7 @@
 			isa = PBXGroup;
 			children = (
 				B4A19DAC24101F7100DE2E55 /* AuthSignUpOperation.swift */,
+				B450740C2411553D0098F02D /* AuthConfirmSignUpOperation.swift */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -1706,6 +1717,7 @@
 		B4A19DA624101E9D00DE2E55 /* Result */ = {
 			isa = PBXGroup;
 			children = (
+				B43CD8552411472300BF5A60 /* AuthSignUpResult.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -1713,6 +1725,8 @@
 		B4A19DA724101E9D00DE2E55 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B43CD8512411463000BF5A60 /* AuthCodeDeliveryDetails.swift */,
+				B43CD857241147F900BF5A60 /* AmplifyUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1721,6 +1735,7 @@
 			isa = PBXGroup;
 			children = (
 				B43DC737241051A200D40275 /* AuthSignUpRequest.swift */,
+				B43CD8532411469D00BF5A60 /* AuthConfirmSignUpRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -3691,6 +3706,7 @@
 				FAF1B88423392F7C007F1435 /* ConcurrentDispatcher.swift in Sources */,
 				21687A41236371E1004A056E /* AnalyticsError.swift in Sources */,
 				FAC23528227A053D00424678 /* AnalyticsCategory+ClientBehavior.swift in Sources */,
+				B43CD8562411472300BF5A60 /* AuthSignUpResult.swift in Sources */,
 				FACD26512386E9410068FBE6 /* JSONValue+KeyPath.swift in Sources */,
 				FA176ED923858A3800C5C5F9 /* Amplify+HubPayloadEventName.swift in Sources */,
 				FAC2353D227A055200424678 /* CategoryConfiguration.swift in Sources */,
@@ -3775,6 +3791,8 @@
 				95DAAB83237F13940028544F /* EntityMatch.swift in Sources */,
 				FA09B93B2321A36F000E064D /* StorageCategory+CategoryConfigurable.swift in Sources */,
 				95DAAB4C237E639E0028544F /* IdentifyEntitiesResult.swift in Sources */,
+				B43CD858241147F900BF5A60 /* AmplifyUser.swift in Sources */,
+				B43CD8542411469D00BF5A60 /* AuthConfirmSignUpRequest.swift in Sources */,
 				B4D38539236C97360014653D /* PredictionsCategory+ClientBehavior.swift in Sources */,
 				FAA2E8BE23A00BD600E420EA /* AmplifyAPICategory.swift in Sources */,
 				210DBC142332B3C6009B9E51 /* StorageGetURLOperation.swift in Sources */,
@@ -3836,6 +3854,8 @@
 				95DAAB32237E63370028544F /* EntityType.swift in Sources */,
 				FA0173372375FAA5005DDDFC /* HubError.swift in Sources */,
 				2142099623721F4400FA140C /* GraphQLOperationType.swift in Sources */,
+				B450740D2411553D0098F02D /* AuthConfirmSignUpOperation.swift in Sources */,
+				B43CD8522411463000BF5A60 /* AuthCodeDeliveryDetails.swift in Sources */,
 				6B767FB923AC0A0D00C683ED /* APICategoryReachabilityBehavior.swift in Sources */,
 				95DAAB36237E63370028544F /* Selection.swift in Sources */,
 				FAC0A2AD22B43FE700B50912 /* HubCategory+ClientBehavior.swift in Sources */,

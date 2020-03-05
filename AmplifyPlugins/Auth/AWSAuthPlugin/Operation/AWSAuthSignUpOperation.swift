@@ -10,7 +10,7 @@ import Foundation
 import Amplify
 import AWSMobileClient
 
-public class AWSAuthSignUpOperation: AmplifyOperation<AuthSignUpRequest, Void, Bool, AmplifyAuthError>,
+public class AWSAuthSignUpOperation: AmplifyOperation<AuthSignUpRequest, Void, AuthSignUpResult, AmplifyAuthError>,
 AuthSignUpOperation {
 
     init(_ request: AuthSignUpRequest,
@@ -30,23 +30,51 @@ AuthSignUpOperation {
 
         AWSMobileClient.default().signUp(username: request.username,
                                          password: request.password,
-                                         userAttributes: request.options.userAttributes ?? [:]) { (result, error) in
-                                            print(result)
-                                            print(error)
-                                            self.dispatch(true)
+                                         userAttributes: request.options.userAttributes ?? [:]) {[weak self] (result, error) in
+                                            guard let result = result else {
+                                                return
+                                            }
+                                            let userConfirmed = result.signUpConfirmationState == .confirmed ? true: false
+                                            var signUpCodeDelivery: AuthCodeDeliveryDetails? = nil
+                                            if let deliveryDetails = result.codeDeliveryDetails {
+                                                let deliveryMedium = deliveryDetails.deliveryMedium.toAuthCodeDeliveryMedium()
+                                                let attributeName = deliveryDetails.attributeName
+                                                let destination = deliveryDetails.destination
+                                                signUpCodeDelivery = AuthCodeDeliveryDetails(desitination: destination,
+                                                                        deliveryMedium: deliveryMedium,
+                                                                        attribuetName: attributeName)
+
+                                            }
+                                            let signUpResult = AuthSignUpResult(userConfirmed: userConfirmed,
+                                                                                 codeDeliveryDetails: signUpCodeDelivery)
+                                            self?.dispatch(signUpResult)
                                             
         }
 
     }
 
-    private func dispatch(_ result: Bool) {
-        let asyncEvent = AsyncEvent<Void, Bool, AmplifyAuthError>.completed(result)
+    private func dispatch(_ result: AuthSignUpResult) {
+        let asyncEvent = AsyncEvent<Void, AuthSignUpResult, AmplifyAuthError>.completed(result)
         dispatch(event: asyncEvent)
     }
 
     private func dispatch(_ error: AmplifyAuthError) {
-        let asyncEvent = AsyncEvent<Void, Bool, AmplifyAuthError>.failed(error)
+        let asyncEvent = AsyncEvent<Void, AuthSignUpResult, AmplifyAuthError>.failed(error)
         dispatch(event: asyncEvent)
     }
 
+}
+
+extension UserCodeDeliveryMedium {
+
+    func toAuthCodeDeliveryMedium() -> DeliveryMedium {
+        switch self {
+        case .email:
+            return .email
+        case .sms:
+            return .sms
+        case .unknown:
+            return .unknown
+        }
+    }
 }

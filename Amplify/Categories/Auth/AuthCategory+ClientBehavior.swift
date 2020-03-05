@@ -11,7 +11,7 @@ extension AuthCategory: AuthCategoryClientBehavior {
 
     public func signUp(username: String,
                        password: String,
-                       options: AuthSignUpOperation.Request.Options?,
+                       options: AuthSignUpOperation.Request.Options? = nil,
                        listener: AuthSignUpOperation.EventListener?) -> AuthSignUpOperation {
         return plugin.signUp(username: username,
                              password: password,
@@ -19,4 +19,14 @@ extension AuthCategory: AuthCategoryClientBehavior {
                              listener: listener)
     }
 
+    public func confirmSignUp(username: String,
+                              code: String,
+                              options: AuthConfirmSignUpOperation.Request.Options? = nil,
+                              listener: AuthConfirmSignUpOperation.EventListener?) -> AuthConfirmSignUpOperation {
+        return plugin.confirmSignUp(username: username,
+                                    code: code,
+                                    options: options,
+                                    listener: listener)
+
+    }
 }

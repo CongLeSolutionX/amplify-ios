@@ -11,6 +11,7 @@
 		AA2E321E33626ECB177A1355 /* Pods_AWSAuthPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC3589BDC4B360503776D17 /* Pods_AWSAuthPlugin.framework */; };
 		B43DC74F2410572400D40275 /* AWSAuthPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43DC7452410572400D40275 /* AWSAuthPlugin.framework */; };
 		B43DC7542410572400D40275 /* AWSAuthPluginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43DC7532410572400D40275 /* AWSAuthPluginTests.swift */; };
+		B450740F241156EC0098F02D /* AWSAuthConfirmSignUpOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B450740E241156EC0098F02D /* AWSAuthConfirmSignUpOperation.swift */; };
 		B49A02BF24106B9D00B42A25 /* AWSAuthPlugin+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49A02BE24106B9D00B42A25 /* AWSAuthPlugin+Reset.swift */; };
 		B49A02C124106BA900B42A25 /* AWSAuthPlugin+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49A02C024106BA900B42A25 /* AWSAuthPlugin+Configure.swift */; };
 		B49A02C324106BB800B42A25 /* AWSAuthPlugin+ClientBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49A02C224106BB800B42A25 /* AWSAuthPlugin+ClientBehavior.swift */; };
@@ -39,6 +40,7 @@
 		B43DC74E2410572400D40275 /* AWSAuthPluginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AWSAuthPluginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B43DC7532410572400D40275 /* AWSAuthPluginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSAuthPluginTests.swift; sourceTree = "<group>"; };
 		B43DC7552410572400D40275 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B450740E241156EC0098F02D /* AWSAuthConfirmSignUpOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSAuthConfirmSignUpOperation.swift; sourceTree = "<group>"; };
 		B49A02BE24106B9D00B42A25 /* AWSAuthPlugin+Reset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AWSAuthPlugin+Reset.swift"; sourceTree = "<group>"; };
 		B49A02C024106BA900B42A25 /* AWSAuthPlugin+Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AWSAuthPlugin+Configure.swift"; sourceTree = "<group>"; };
 		B49A02C224106BB800B42A25 /* AWSAuthPlugin+ClientBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AWSAuthPlugin+ClientBehavior.swift"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				B49A02CB24106F5E00B42A25 /* AWSAuthSignUpOperation.swift */,
+				B450740E241156EC0098F02D /* AWSAuthConfirmSignUpOperation.swift */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B450740F241156EC0098F02D /* AWSAuthConfirmSignUpOperation.swift in Sources */,
 				B49A02BF24106B9D00B42A25 /* AWSAuthPlugin+Reset.swift in Sources */,
 				B49A02CC24106F5E00B42A25 /* AWSAuthSignUpOperation.swift in Sources */,
 				B49A02C324106BB800B42A25 /* AWSAuthPlugin+ClientBehavior.swift in Sources */,

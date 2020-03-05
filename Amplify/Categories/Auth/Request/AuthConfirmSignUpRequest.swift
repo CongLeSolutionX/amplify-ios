@@ -7,33 +7,33 @@
 
 import Foundation
 
-public struct AuthSignUpRequest: AmplifyOperationRequest {
+public struct AuthConfirmSignUpRequest: AmplifyOperationRequest {
 
     public let username: String
 
-    public let password: String
+    public let code: String
 
     public var options: Options
 
-    public init(username: String, password: String, options: Options) {
+    public init(username: String, code: String, options: Options) {
         self.username = username
-        self.password = password
+        self.code = code
         self.options = options
     }
 }
 
-public extension AuthSignUpRequest {
+public extension AuthConfirmSignUpRequest {
 
     struct Options {
 
-        public let userAttributes: [String: String]?
+        public let forceAliasCreation: Bool
         public let validationData: [String: String]?
         public let metaData: [String: String]?
 
-        public init(userAttributes: [String: String]? = nil,
+        public init(forceAliasCreation: Bool = false,
                     validationData: [String: String]? = nil,
                     metaData: [String: String]? = nil) {
-            self.userAttributes = userAttributes
+            self.forceAliasCreation = forceAliasCreation
             self.validationData = validationData
             self.metaData = metaData
         }

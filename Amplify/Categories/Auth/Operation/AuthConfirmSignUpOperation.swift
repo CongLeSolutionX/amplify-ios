@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol AuthSignUpOperation: AmplifyOperation<AuthSignUpRequest,
+public protocol AuthConfirmSignUpOperation: AmplifyOperation<AuthConfirmSignUpRequest,
 Void,
 AuthSignUpResult,
 AmplifyAuthError> {}
@@ -15,5 +15,5 @@ AmplifyAuthError> {}
 public extension HubPayload.EventName.Auth {
 
     /// eventName for HubPayloads emitted by this operation
-    static let signUp = "Auth.signUp"
+    static let confirmSignUp = "Auth.confirmSignUp"
 }
