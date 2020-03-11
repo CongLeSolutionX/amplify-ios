@@ -34,6 +34,7 @@ AuthConfirmSignUpOperation {
                                                     guard let result = result else {
                                                         return
                                                     }
+                                                    
                                                     let userConfirmed = result.signUpConfirmationState == .confirmed ? true: false
                                                     var signUpCodeDelivery: AuthCodeDeliveryDetails? = nil
                                                     if let deliveryDetails = result.codeDeliveryDetails {

@@ -6,7 +6,7 @@
 //  Copyright © 2020 Amazon Web Services. All rights reserved.
 //
 
-struct PluginConstants {
+struct AuthPluginConstants {
     static let awsAuthPluginKey = "awsAuthPlugin"
 }
 

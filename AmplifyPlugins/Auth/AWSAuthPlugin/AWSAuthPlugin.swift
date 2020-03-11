@@ -14,10 +14,12 @@ final public class AWSAuthPlugin: AuthCategoryPlugin {
 
     /// A queue that regulates the execution of operations.
     var queue: OperationQueue!
+
+    var authorizer: AuthorizerBehavior!
     
     /// The unique key of the plugin within the auth category.
     public var key: PluginKey {
-        return PluginConstants.awsAuthPluginKey
+        return AuthPluginConstants.awsAuthPluginKey
     }
 
     /// Instantiates an instance of the AWSS3StoragePlugin.

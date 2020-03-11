@@ -18,4 +18,19 @@ public protocol AuthCategoryClientBehavior {
                        code: String,
                        options: AuthConfirmSignUpOperation.Request.Options?,
                        listener: AuthConfirmSignUpOperation.EventListener?) -> AuthConfirmSignUpOperation
+
+    func signIn(username: String,
+                password: String,
+                options: AuthSignInOperation.Request.Options?,
+                listener: AuthSignInOperation.EventListener?) -> AuthSignInOperation
+
+    func signInWithSocial(provider: AuthSocialProvider,
+                          token: String,
+                          options: AuthSocialSignInOperation.Request.Options?,
+                          listener: AuthSocialSignInOperation.EventListener?) -> AuthSocialSignInOperation
+
+    func signInWithUI(options: AuthUISignInOperation.Request.Options?,
+                      listener: AuthUISignInOperation.EventListener?) -> AuthUISignInOperation
+
+    func currentAuthorizationState(listener: AuthStateOperation.EventListener?) -> AuthStateOperation
 }

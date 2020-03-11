@@ -21,6 +21,7 @@ extension AWSAuthPlugin {
     ///   - PluginError.pluginConfigurationError: If one of the configuration values is invalid or empty
     public func configure(using configuration: Any) throws {
         queue = OperationQueue()
+        authorizer = AuthorizerAdaptor()
         AWSMobileClient.default().initialize { (state, error) in
             print(state)
         }
