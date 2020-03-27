@@ -29,6 +29,11 @@ AuthConfirmSignUpOperation {
             return
         }
 
+        Amplify.Hub.listen(to: .auth,
+                           eventName: "") { (payload) in
+                            
+        }
+
         AWSMobileClient.default().confirmSignUp(username: request.username,
                                                 confirmationCode: request.code) {[weak self] (result, error) in
                                                     guard let result = result else {

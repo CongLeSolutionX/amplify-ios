@@ -25,6 +25,8 @@ class AuthorizerAdaptor: AuthorizerBehavior {
         }
     }
 
+    // MARK: -
+    
     private func getIdentityId(userPoolTokens: Tokens?,
                                callback: @escaping AuthorizerListener) {
 

@@ -16,11 +16,15 @@ AuthSignInOperation {
 
     let authorizer: AuthorizerBehavior
 
+    let awsmobileClient: AWSMobileClient
+
     init(_ request: AuthSignInRequest,
          authorizer: AuthorizerBehavior,
+         awsMobileClient: AWSMobileClient,
          listener: EventListener?) {
 
         self.authorizer = authorizer
+        self.awsmobileClient = awsMobileClient
         super.init(categoryType: .auth,
                    eventName: HubPayload.EventName.Auth.signIn,
                    request: request,
@@ -33,7 +37,7 @@ AuthSignInOperation {
             return
         }
 
-        AWSMobileClient.default().signIn(username: request.username,
+        self.awsmobileClient.signIn(username: request.username,
                                          password: request.password) { [weak self] (result, error) in
 
                                             if let error = error {

@@ -7,6 +7,6 @@
 //
 
 struct AuthPluginConstants {
-    static let awsAuthPluginKey = "awsAuthPlugin"
+    static let awsAuthPluginKey = "awsCognitoAuthPlugin"
 }
 

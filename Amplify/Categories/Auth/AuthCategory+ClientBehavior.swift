@@ -50,7 +50,7 @@ extension AuthCategory: AuthCategoryClientBehavior {
                                        listener: listener)
     }
 
-    public func signInWithUI(options: AuthUISignInRequest.Options?,
+    public func signInWithUI(options: AuthUISignInRequest.Options? = nil,
                              listener: AuthUISignInOperation.EventListener?) -> AuthUISignInOperation {
         return plugin.signInWithUI(options: options,
                                    listener: listener)
@@ -59,5 +59,35 @@ extension AuthCategory: AuthCategoryClientBehavior {
 
     public func currentAuthorizationState(listener: AuthStateOperation.EventListener?) -> AuthStateOperation {
         return plugin.currentAuthorizationState(listener: listener)
+    }
+
+    public func forgotPassword(username: String,
+                               options: AuthForgotPasswordOperation.Request.Options? = nil,
+                               listener: AuthForgotPasswordOperation.EventListener?) -> AuthForgotPasswordOperation {
+        return plugin.forgotPassword(username: username,
+                                     options: options,
+                                     listener: listener)
+    }
+
+    public func confirmForgotPassword(username: String,
+                                      newPassword: String,
+                                      confirmationCode: String,
+                                      options: AuthConfirmForgotPwdOperation.Request.Options? = nil,
+                                      listener: AuthConfirmForgotPwdOperation.EventListener?) -> AuthConfirmForgotPwdOperation {
+        return plugin.confirmForgotPassword(username: username,
+                                            newPassword: newPassword,
+                                            confirmationCode: confirmationCode,
+                                            options: options,
+                                            listener: listener)
+    }
+
+    public func changePassword(currentPassword: String,
+                               newPassword: String,
+                               options: AuthChangePasswordOperation.Request.Options? = nil,
+                               listener: AuthChangePasswordOperation.EventListener?) -> AuthChangePasswordOperation {
+        return plugin.changePassword(currentPassword: currentPassword,
+                                     newPassword: newPassword,
+                                     options: options,
+                                     listener: listener)
     }
 }

@@ -49,6 +49,7 @@ extension AWSAuthPlugin {
                                         options: options)
         let signInOperation = AWSAuthSignInOperation(request,
                                                      authorizer: self.authorizer,
+                                                     awsMobileClient: self.awsMobileClient,
                                                      listener: listener)
         queue.addOperation(signInOperation)
         return signInOperation
@@ -82,6 +83,27 @@ extension AWSAuthPlugin {
     }
     
     public func currentAuthorizationState(listener: AuthStateOperation.EventListener?) -> AuthStateOperation {
+        fatalError()
+    }
+
+    public func forgotPassword(username: String,
+                               options: AuthForgotPasswordOperation.Request.Options? = nil,
+                               listener: AuthForgotPasswordOperation.EventListener?) -> AuthForgotPasswordOperation {
+        fatalError()
+    }
+
+    public func confirmForgotPassword(username: String,
+                                      newPassword: String,
+                                      confirmationCode: String,
+                                      options: AuthConfirmForgotPwdOperation.Request.Options? = nil,
+                                      listener: AuthConfirmForgotPwdOperation.EventListener?) -> AuthConfirmForgotPwdOperation {
+        fatalError()
+    }
+
+    public func changePassword(currentPassword: String,
+                               newPassword: String,
+                               options: AuthChangePasswordOperation.Request.Options? = nil,
+                               listener: AuthChangePasswordOperation.EventListener?) -> AuthChangePasswordOperation {
         fatalError()
     }
 }

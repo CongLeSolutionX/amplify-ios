@@ -33,4 +33,21 @@ public protocol AuthCategoryClientBehavior {
                       listener: AuthUISignInOperation.EventListener?) -> AuthUISignInOperation
 
     func currentAuthorizationState(listener: AuthStateOperation.EventListener?) -> AuthStateOperation
+
+    // MARK: - Password Management
+
+    func forgotPassword(username: String,
+                        options: AuthForgotPasswordOperation.Request.Options?,
+                        listener: AuthForgotPasswordOperation.EventListener?) -> AuthForgotPasswordOperation
+
+    func confirmForgotPassword(username: String,
+                               newPassword: String,
+                               confirmationCode: String,
+                               options: AuthConfirmForgotPwdOperation.Request.Options?,
+                               listener: AuthConfirmForgotPwdOperation.EventListener?) -> AuthConfirmForgotPwdOperation
+
+    func changePassword(currentPassword: String,
+                        newPassword: String,
+                        options: AuthChangePasswordOperation.Request.Options?,
+                        listener: AuthChangePasswordOperation.EventListener?) -> AuthChangePasswordOperation
 }

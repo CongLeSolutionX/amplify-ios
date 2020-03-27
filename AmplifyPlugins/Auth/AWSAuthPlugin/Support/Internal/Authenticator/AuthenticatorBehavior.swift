@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol AuthenticatorBehavior {
+
+    func signIn(credentials: Any)
+}

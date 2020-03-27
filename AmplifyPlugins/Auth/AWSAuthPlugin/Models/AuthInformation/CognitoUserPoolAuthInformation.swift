@@ -8,9 +8,7 @@
 
 import Amplify
 
-public struct CognitoUserPoolAuthInformation: AmplifyAuthInformation, CognitoUserPoolTokensProvider {
-
-    public var userPoolTokens: CognitoUserPoolTokens
+public struct CognitoUserPoolAuthInformation: AmplifyAuthInformation {
 
     public var isSignedIn: Bool // method get the value from AuthUserState
 
@@ -18,20 +16,31 @@ public struct CognitoUserPoolAuthInformation: AmplifyAuthInformation, CognitoUse
 
     let awsCredentials: AmplifyAWSCredentials?
 
-    init (isSignedIn: Bool, state: AuthUserState,
+    let cognitoUserPoolTokens: CognitoUserPoolTokens
+
+    init (isSignedIn: Bool,
+          state: AuthUserState,
           userPoolTokens: CognitoUserPoolTokens,
           awsCredentials: AmplifyAWSCredentials?) {
 
         self.isSignedIn = isSignedIn
         self.state = state
         self.awsCredentials = awsCredentials
-        self.userPoolTokens = userPoolTokens
+        self.cognitoUserPoolTokens = userPoolTokens
     }
 }
 
 extension CognitoUserPoolAuthInformation: AmplifyAWSCredentialsProvider {
-
-    public func getAWSCredentials() -> AmplifyAWSCredentials {
+    public var getAWSCredentials: AmplifyAWSCredentials {
         return awsCredentials!
     }
+}
+
+extension CognitoUserPoolAuthInformation: CognitoUserPoolTokensProvider {
+
+    public var userPoolTokens: CognitoUserPoolTokens {
+        return cognitoUserPoolTokens
+    }
+
+
 }

@@ -11,14 +11,16 @@ import Foundation
 public protocol CognitoUserPoolTokensProvider {
 
     var userPoolTokens: CognitoUserPoolTokens { get }
-
 }
 
-public protocol CognitoUserPoolTokens {
+public struct CognitoUserPoolTokens {
 
-    var idToken: String { get }
-    var accessToken: String { get }
-    var refreshToken: String { get }
-    var expiration: Date { get }
-    
+    public let idToken: String
+    public let accessToken: String
+    public let refreshToken: String
+    public let expiration: Date
+
+    public func isValid() -> Bool {
+        return true
+    }
 }

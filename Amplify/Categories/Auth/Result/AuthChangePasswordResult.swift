@@ -7,9 +7,11 @@
 
 import Foundation
 
-public protocol AmplifyAuthInformation {
+public struct AuthChangePasswordResult {
 
-    var isSignedIn: Bool { get }
+    public let status: Bool
 
-    var state: AuthUserState { get }
+    public init(status: Bool) {
+        self.status = status
+    }
 }

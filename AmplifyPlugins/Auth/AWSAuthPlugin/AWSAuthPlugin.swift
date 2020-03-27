@@ -9,6 +9,7 @@
 import Foundation
 import Amplify
 import AWSPluginsCore
+import AWSMobileClient
 
 final public class AWSAuthPlugin: AuthCategoryPlugin {
 
@@ -16,6 +17,8 @@ final public class AWSAuthPlugin: AuthCategoryPlugin {
     var queue: OperationQueue!
 
     var authorizer: AuthorizerBehavior!
+
+    var awsMobileClient: AWSMobileClient!
     
     /// The unique key of the plugin within the auth category.
     public var key: PluginKey {
