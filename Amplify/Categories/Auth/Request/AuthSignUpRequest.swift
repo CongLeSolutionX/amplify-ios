@@ -14,12 +14,6 @@ public struct AuthSignUpRequest: AmplifyOperationRequest {
     public let password: String
 
     public var options: Options
-
-    public init(username: String, password: String, options: Options) {
-        self.username = username
-        self.password = password
-        self.options = options
-    }
 }
 
 public extension AuthSignUpRequest {

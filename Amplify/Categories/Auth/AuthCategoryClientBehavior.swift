@@ -15,7 +15,7 @@ public protocol AuthCategoryClientBehavior {
                 listener: AuthSignUpOperation.EventListener?) -> AuthSignUpOperation
 
     func confirmSignUp(username: String,
-                       code: String,
+                       confirmationCode: String,
                        options: AuthConfirmSignUpOperation.Request.Options?,
                        listener: AuthConfirmSignUpOperation.EventListener?) -> AuthConfirmSignUpOperation
 

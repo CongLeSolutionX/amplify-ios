@@ -75,7 +75,7 @@ extension AWSAuthConfiguration {
                     "Scopes": hostedUIScopes] as [String : Any]
         let oauth = ["OAuth": auth,
                            "authenticationFlowType": authenticationFlowType] as [String : Any]
-        let defaultOauth = ["default": oauth]
+        let defaultOauth = ["Default": oauth]
         awsConfiguration["Auth"] = defaultOauth
         print("here \(awsConfiguration)")
         return awsConfiguration

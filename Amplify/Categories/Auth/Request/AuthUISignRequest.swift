@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+public typealias AuthUIPresentationAnchor = UIWindow
+
 public struct AuthUISignInRequest: AmplifyOperationRequest {
 
     public var options: Options
@@ -21,14 +23,14 @@ public struct AuthUISignInRequest: AmplifyOperationRequest {
 public extension AuthUISignInRequest {
 
     struct Options {
-        public var navigationController: UINavigationController?
+        public var presentationAnchor: AuthUIPresentationAnchor?
         public let validationData: [String: String]?
         public let metaData: [String: String]?
 
-        public init(navigationController: UINavigationController? = nil,
+        public init(presentationAnchor: AuthUIPresentationAnchor? = nil,
                     validationData: [String: String]? = nil,
                     metaData: [String: String]? = nil) {
-            self.navigationController = navigationController
+            self.presentationAnchor = presentationAnchor
             self.validationData = validationData
             self.metaData = metaData
         }

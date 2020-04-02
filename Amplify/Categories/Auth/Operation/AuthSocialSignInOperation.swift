@@ -8,8 +8,8 @@
 import Foundation
 
 public protocol AuthSocialSignInOperation: AmplifyOperation<AuthSocialSignInRequest,
-Void,
-AuthSocialSignInResult,
+    Void,
+    AuthSocialSignInResult,
 AmplifyAuthError> {}
 
 public extension HubPayload.EventName.Auth {

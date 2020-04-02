@@ -20,11 +20,11 @@ extension AuthCategory: AuthCategoryClientBehavior {
     }
 
     public func confirmSignUp(username: String,
-                              code: String,
+                              confirmationCode: String,
                               options: AuthConfirmSignUpOperation.Request.Options? = nil,
                               listener: AuthConfirmSignUpOperation.EventListener?) -> AuthConfirmSignUpOperation {
         return plugin.confirmSignUp(username: username,
-                                    code: code,
+                                    confirmationCode: confirmationCode,
                                     options: options,
                                     listener: listener)
 

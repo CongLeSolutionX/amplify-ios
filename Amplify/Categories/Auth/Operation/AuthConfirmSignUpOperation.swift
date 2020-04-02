@@ -8,8 +8,8 @@
 import Foundation
 
 public protocol AuthConfirmSignUpOperation: AmplifyOperation<AuthConfirmSignUpRequest,
-Void,
-AuthSignUpResult,
+    Void,
+    AuthSignUpResult,
 AmplifyAuthError> {}
 
 public extension HubPayload.EventName.Auth {

@@ -13,5 +13,5 @@ public enum AuthSocialProvider {
     case apple
     case facebook
     case google
-    case other(String)
+    case socialProvider(String)
 }

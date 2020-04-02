@@ -33,29 +33,43 @@ AuthUISignInOperation {
             return
         }
 
-        guard let navController = request.options.navigationController else {
+        guard let window = request.options.presentationAnchor else {
             return
         }
+
         DispatchQueue.main.async {
-            AWSMobileClient.default().showSignIn(navigationController: navController,
-                                                 hostedUIOptions: HostedUIOptions()) { [weak self](state, error) in
-                                                    if let error = error {
-                                                        print(error)
-                                                        return
-                                                    }
+            let navController = UINavigationController(rootViewController: UIViewController())
+            navController.isNavigationBarHidden = true
+            navController.modalPresentationStyle = .overCurrentContext
 
-                                                    self?.authorizer.getAuthorization(listener: { (authResult) in
-                                                        switch authResult {
-                                                        case .failure(let error):
-                                                            break
-                                                        case .success(let authInfo):
-                                                            let signedInResult = AuthUISignInResult(authInfo: authInfo)
-                                                            self?.dispatch(signedInResult)
+            window.rootViewController?.present(navController, animated: false, completion: { [weak self] in
+
+
+                AWSMobileClient.default().showSignIn(navigationController: navController,
+                                                     hostedUIOptions: HostedUIOptions()) {(state, error) in
+                                                        DispatchQueue.main.async {
+                                                            print("Closing")
+                                                            navController.dismiss(animated: false)
                                                         }
-                                                    })
-            }
-        }
+                                                        if let error = error {
+                                                            print(error)
+                                                            return
+                                                        }
 
+                                                        self?.authorizer.getAuthorization(listener: { (authResult) in
+                                                            switch authResult {
+                                                            case .failure(let error):
+                                                                break
+                                                            case .success(let authInfo):
+                                                                let signedInResult = AuthUISignInResult(authInfo: authInfo)
+                                                                self?.dispatch(signedInResult)
+                                                            }
+                                                        })
+                }
+
+            })
+
+        }
 
     }
 

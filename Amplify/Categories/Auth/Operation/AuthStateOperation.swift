@@ -8,8 +8,8 @@
 import Foundation
 
 public protocol AuthStateOperation: AmplifyOperation<AuthStateRequest,
-Void,
-AmplifyAuthInformation,
+    Void,
+    AmplifyAuthInformation,
 AmplifyAuthError> {}
 
 public extension HubPayload.EventName.Auth {
