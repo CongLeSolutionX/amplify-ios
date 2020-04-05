@@ -35,7 +35,7 @@ AuthConfirmSignUpOperation {
         }
 
         AWSMobileClient.default().confirmSignUp(username: request.username,
-                                                confirmationCode: request.code) {[weak self] (result, error) in
+                                                confirmationCode: request.confirmationCode) {[weak self] (result, error) in
                                                     guard let result = result else {
                                                         return
                                                     }

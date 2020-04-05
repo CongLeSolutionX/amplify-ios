@@ -11,13 +11,13 @@ public struct AuthConfirmSignUpRequest: AmplifyOperationRequest {
 
     public let username: String
 
-    public let code: String
+    public let confirmationCode: String
 
     public var options: Options
 
-    public init(username: String, code: String, options: Options) {
+    public init(username: String, confirmationCode: String, options: Options) {
         self.username = username
-        self.code = code
+        self.confirmationCode = confirmationCode
         self.options = options
     }
 }

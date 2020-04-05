@@ -26,12 +26,12 @@ extension AWSAuthPlugin {
     }
     
     public func confirmSignUp(username: String,
-                              code: String,
+                              confirmationCode: String,
                               options: AuthConfirmSignUpOperation.Request.Options? = nil,
                               listener: AuthConfirmSignUpOperation.EventListener?) -> AuthConfirmSignUpOperation {
         let options = options ?? AuthConfirmSignUpRequest.Options()
         let request = AuthConfirmSignUpRequest(username: username,
-                                               code: code,
+                                               confirmationCode: confirmationCode,
                                                options: options)
         
         let confirmSignUpOperation = AWSAuthConfirmSignUpOperation(request, listener: listener)
