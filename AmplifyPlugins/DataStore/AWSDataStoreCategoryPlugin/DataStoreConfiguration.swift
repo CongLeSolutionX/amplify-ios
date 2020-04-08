@@ -44,16 +44,16 @@ public struct DataStoreConfiguration {
 
     /// A callback function called on unhandled errors
     public let errorHandler: DataStoreErrorHandler
-    
+
     /// A callback called when a conflict could not be resolved by the service
     public let conflictHandler: DataStoreConflictHandler
-    
+
     /// How often the sync engine will run (in seconds)
     public let syncInterval: TimeInterval
-    
+
     /// The number of records to sync per execution
     public let syncMaxRecords: UInt
-    
+
     /// The page size of each sync execution
     public let syncPageSize: UInt
 
